@@ -3,67 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escape Room | Round 2</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>Escape Room | Round 2 — Convoke 8.0</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="page page-landing">
-    <div class="sky-noise" aria-hidden="true"></div>
-    <div class="embers" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span>
+
+    <!-- Atmosphere layers -->
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="lava-floor" aria-hidden="true"></div>
+    <div class="fog" aria-hidden="true"></div>
+
+    <!-- Floating spores -->
+    <div class="spores" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
     </div>
-    <div class="storm-band" aria-hidden="true"></div>
-    <div class="rift rift-left" aria-hidden="true"></div>
-    <div class="rift rift-right" aria-hidden="true"></div>
-    <div class="clock-tower" aria-hidden="true">
-      <div class="clock-face"></div>
-    </div>
-    <div class="tentacles" aria-hidden="true">
-      <span class="tentacle t1"></span>
-      <span class="tentacle t2"></span>
-      <span class="tentacle t3"></span>
-      <span class="tentacle t4"></span>
+
+    <!-- String lights -->
+    <div class="light-string" aria-hidden="true">
+      <span class="bulb on"></span>
+      <span class="bulb dim b3"></span>
+      <span class="bulb on b4"></span>
+      <span class="bulb on"></span>
+      <span class="bulb dim b5"></span>
+      <span class="bulb on b6"></span>
+      <span class="bulb on"></span>
+      <span class="bulb dim b3"></span>
+      <span class="bulb on b4"></span>
+      <span class="bulb dim"></span>
+      <span class="bulb on b5"></span>
+      <span class="bulb on b6"></span>
+      <span class="bulb dim b3"></span>
+      <span class="bulb on"></span>
+      <span class="bulb on b4"></span>
+      <span class="bulb dim b5"></span>
     </div>
 
     <main class="hero-shell">
       <section class="hero-copy">
         <p class="eyebrow">Convoke 8.0 presents</p>
-        <h1>Escape Room</h1>
-        <p class="tagline">Step into the rupture. Trust nothing that glows back.</p>
+        <h1 data-text="Escape Room">Escape Room</h1>
+        <p class="tagline">Two steps in. The room locks once. No way out.</p>
         <p class="body-copy">
-          The air is wrong. The walls remember. Somewhere in the static, a signal waits
-          for the team that can hear past the noise.
+          The air is wrong. The walls remember. Somewhere in the static,
+          a signal waits for the team that can hear past the noise.
         </p>
 
         <div class="event-strip">
           <div class="event-card">
             <span class="event-label">Round 1</span>
             <strong>Online Quiz</strong>
-            <span>28 March 2026</span>
+            <span>28 March 2026 · 7–9 PM</span>
           </div>
           <div class="event-card active">
             <span class="event-label">Round 2</span>
             <strong>Puzzle Arena</strong>
-            <span>10 April 2026 · 11 AM</span>
+            <span>10 April 2026 · 11 AM–2 PM</span>
           </div>
           <div class="event-card">
             <span class="event-label">Round 3</span>
             <strong>Escape Room</strong>
-            <span>10 April 2026 · 3 PM</span>
+            <span>10 April 2026 · 3–6 PM</span>
           </div>
         </div>
       </section>
 
       <section class="scene-frame" aria-label="Themed scene">
-        <div class="monster-silhouette" aria-hidden="true"></div>
-        <div class="signal-ring" aria-hidden="true"></div>
-        <div class="signal-ring second" aria-hidden="true"></div>
+        <img class="hero-img" src="hero.png" alt="" aria-hidden="true" />
+
         <div class="signal-copy">
           <p class="signal-title">The veil opens for those who notice what should not be there.</p>
           <p class="signal-subtitle">One detail is not decoration. Find it.</p>
@@ -73,7 +82,6 @@
           class="hidden-rift-trigger"
           type="button"
           aria-label="Hidden path to the next chamber"
-          title="A fracture in the clock"
           data-next-page="signal.html"
         ></button>
       </section>
