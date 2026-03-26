@@ -16,8 +16,8 @@
   --faint:      rgba(232, 200, 200, 0.65);
   --glass:      rgba(20, 2, 2, 0.75);
   --shadow:     0 32px 80px rgba(0, 0, 0, 0.9);
-  --glow-sm:    0 0 12px rgba(200, 0, 0, 0.7);
-  --glow-lg:    0 0 40px rgba(200, 0, 0, 0.5), 0 0 80px rgba(180, 0, 0, 0.3);
+  --glow-sm:    0 0 8px rgba(220, 0, 0, 0.6);
+  --glow-lg:    0 0 20px rgba(200, 0, 0, 0.4), 0 0 40px rgba(180, 0, 0, 0.2);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -232,9 +232,8 @@ h1 {
   font-weight: 900;
   color: var(--hot-red);
   text-shadow:
-    0 0 20px rgba(255, 0, 0, 0.9),
-    0 0 60px rgba(200, 0, 0, 0.6),
-    0 0 120px rgba(150, 0, 0, 0.4),
+    0 0 10px rgba(255, 0, 0, 0.8),
+    0 0 30px rgba(200, 0, 0, 0.4),
     3px 3px 0px rgba(0, 0, 0, 0.8);
   position: relative;
 }
@@ -264,7 +263,7 @@ h1::after {
   font-size: clamp(1.1rem, 1.8vw, 1.5rem);
   font-style: italic;
   color: var(--crimson);
-  text-shadow: 0 0 12px rgba(200, 0, 0, 0.6);
+  text-shadow: 0 0 6px rgba(200, 0, 0, 0.5);
   letter-spacing: 0.03em;
 }
 
@@ -377,7 +376,7 @@ h1::after {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ash);
-  text-shadow: 0 0 18px rgba(200, 0, 0, 0.6);
+  text-shadow: 0 0 10px rgba(200, 0, 0, 0.5);
 }
 
 .signal-subtitle {
@@ -573,8 +572,8 @@ h1::after {
   letter-spacing: 0.05em;
 }
 
-.form-feedback.error   { color: #ff6060; text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); }
-.form-feedback.success { color: #ffaa80; text-shadow: 0 0 8px rgba(255, 100, 0, 0.4); }
+.form-feedback.error   { color: #ff6060; text-shadow: 0 0 5px rgba(255, 0, 0, 0.4); }
+.form-feedback.success { color: #ffaa80; text-shadow: 0 0 5px rgba(255, 100, 0, 0.3); }
 
 /* ── Unlocked page ── */
 .unlock-shell {
