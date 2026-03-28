@@ -1,5 +1,5 @@
-const CLUE_AUDIO_PATH = "/morse_code/morse_code_noised.wav";
-const PUZZLE_SHEET_PATH = "/find_the_anamoly.xlsx";
+const CLUE_AUDIO_PATH = "morse_code/morse_code_noised.wav";
+const PUZZLE_SHEET_PATH = "find_the_anamoly.xlsx";
 const PUZZLE_SHEET_NAME = "find_the_anamoly.xlsx";
 
 function forceDownload(filePath, filename) {
