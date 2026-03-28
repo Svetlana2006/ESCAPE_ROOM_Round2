@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Signal | Escape Room</title>
+    <script type="module" crossorigin src="./assets/script-D7wn92xR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/script-C17IBFWv.css">
+  </head>
+  <body class="page page-signal">
+
+    <!-- Atmosphere layers -->
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="lava-floor" aria-hidden="true"></div>
+    <div class="fog" aria-hidden="true"></div>
+
+    <!-- Floating spores -->
+    <div class="spores dense" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <main class="signal-shell">
+      <section class="signal-panel">
+        <p class="classified-stamp" aria-hidden="true">Classified</p>
+
+        <p class="eyebrow">Recovered transmission</p>
+        <h1 data-text="The Static Isn't Empty">The Static Isn't Empty</h1>
+        <p class="body-copy">
+          Something is buried in the noise. This audio will lead you to the next clue —
+          but first, you must clean what the signal corrupted.
+        </p>
+
+        <div class="audio-controls">
+          <audio id="clue-audio" src="morse_code/morse_code_noised.wav" preload="none"></audio>
+          <button class="audio-btn" id="play-btn" type="button" onclick="toggleAudio()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path id="play-icon" d="M8 5v14l11-7z"/></svg>
+            <span id="play-label">Play</span>
+          </button>
+          <button class="audio-btn secondary" type="button" onclick="downloadClue()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19 9h-4V3H9v6H5l7 8 7-8zm-7 10H5v2h14v-2h-7z"/></svg>
+            Download
+          </button>
+        </div>
+      </section>
+
+      <section class="gate-panel">
+        <p class="gate-label">Enter the key</p>
+        <form class="key-form" data-expected-key="HEWASNEVERCHECKEDIN" novalidate>
+          <label for="key-input" class="sr-only">Enter the decoded key</label>
+          <input
+            id="key-input"
+            name="key"
+            type="text"
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            placeholder="Decoded phrase"
+          />
+          <button type="submit">Unlock Next Step</button>
+        </form>
+        <p class="form-feedback" aria-live="polite"></p>
+      </section>
+    </main>
+
+  </body>
+</html>
