@@ -486,6 +486,7 @@ h1::after {
     0 6px 20px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 80, 80, 0.1);
   transition: box-shadow 0.2s, filter 0.2s, border-color 0.2s;
+  text-decoration: none;
 }
 
 .audio-btn:hover {
@@ -564,6 +565,12 @@ h1::after {
     0 0 24px rgba(200, 0, 0, 0.4);
 }
 
+.key-form input:disabled,
+.key-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 .form-feedback {
   min-height: 1.5rem;
   margin: 0.8rem 0 0;
@@ -577,14 +584,90 @@ h1::after {
 
 /* ── Unlocked page ── */
 .unlock-shell {
-  width: min(92vw, 42rem);
-  margin: 12vh auto;
-  padding: 2.4rem;
-  text-align: center;
-  background: linear-gradient(150deg, rgba(25, 2, 2, 0.88), rgba(8, 0, 0, 0.97));
-  border: 1px solid rgba(140, 0, 0, 0.3);
+  width: min(92vw, 54rem);
+  margin: min(12vh, 6rem) auto;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  text-align: left;
+  background:
+    linear-gradient(150deg, rgba(30, 4, 4, 0.9), rgba(5, 0, 0, 0.98)),
+    radial-gradient(circle at top, rgba(255, 40, 0, 0.08), transparent 55%);
+  border: 1px solid rgba(170, 10, 10, 0.35);
   border-radius: 1.2rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), 0 0 40px rgba(140, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.unlock-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 70, 70, 0.05), transparent),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 35%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.page-unlocked {
+  display: grid;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.unlock-haze {
+  position: fixed;
+  inset: -10%;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(130, 0, 0, 0.18), transparent 30%),
+    radial-gradient(circle at 50% 70%, rgba(255, 60, 0, 0.1), transparent 28%);
+  filter: blur(40px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  animation: unlockPulse 7s ease-in-out infinite;
+}
+
+.unlock-warning {
+  font-family: "Special Elite", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffb0a0;
+  opacity: 0.8;
+}
+
+.page-unlocked h1 {
+  margin-top: 1.4rem;
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  animation: titleFlicker 4.5s steps(2, end) infinite;
+}
+
+.unlock-copy {
+  max-width: 32rem;
+}
+
+.unlock-whisper {
+  margin-top: 1.2rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 180, 180, 0.78);
+  text-shadow: 0 0 10px rgba(200, 0, 0, 0.2);
+}
+
+.unlock-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.unlock-note {
+  margin-top: 1.4rem;
+  font-family: "Special Elite", monospace;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 180, 180, 0.5);
 }
 
 /* ── Screen reader ── */
@@ -639,6 +722,21 @@ h1::after {
   50%       { opacity: 1; }
 }
 
+@keyframes unlockPulse {
+  0%, 100% { transform: scale(1) translate3d(0, 0, 0); opacity: 0.7; }
+  50% { transform: scale(1.08) translate3d(0, -1%, 0); opacity: 1; }
+}
+
+@keyframes titleFlicker {
+  0%, 100% { opacity: 1; transform: translateX(0); }
+  10% { opacity: 0.9; transform: translateX(-1px); }
+  11% { opacity: 0.45; transform: translateX(2px); }
+  12% { opacity: 1; transform: translateX(0); }
+  36% { opacity: 1; }
+  37% { opacity: 0.5; }
+  38% { opacity: 1; }
+}
+
 /* ══════════════════════════════
    RESPONSIVE
    ══════════════════════════════ */
@@ -658,4 +756,6 @@ h1::after {
   .body-copy { font-size: 1.1rem; }
   .scene-frame { min-height: 30rem; }
   .signal-panel, .gate-panel, .unlock-shell { padding: 1.4rem; }
+  .unlock-actions { flex-direction: column; }
+  .unlock-actions .audio-btn { justify-content: center; }
 }
